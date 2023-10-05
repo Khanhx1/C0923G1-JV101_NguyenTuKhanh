@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey khách hàng</title>
+  <style>
+   #border2 {
+     border-collapse: collapse;
+   }
+  </style>
+</head>
+<body>
+<form action="kdlakdk.com" method="get">
+<h2>Market Research Survey</h2>
+<p>Please take a few moments to complete this satisfaction survey.</p>
+<hr>
+<h4>What is your age range?</h4>
+<select>
+  <option>18-24</option>
+  <option>18</option>
+  <option>19</option>
+  <option>20</option>
+  <option>21</option>
+  <option>22</option>
+  <option>23</option>
+  <option>24</option>
+</select>
+<h4>What is your yearly income range?</h4>
+<select>
+  <option>$0-$25,000</option>
+  <option>$0</option>
+  <option>$5,000</option>
+  <option>$10,000</option>
+  <option>$15,000</option>
+  <option>$20,000</option>
+  <option>25,000</option>
+</select>
+<h4>Gender Identity</h4>
+<input type="radio" name="gender" value="Male" > Male<br>
+<input type="radio" name="gender" value="Female"> Female<br>
+<input type="radio" name="gender" value="Nonbinary"> Nonbinary<br>
+<input type="radio" name="gender" value="Other"> Other<br>
+&nbsp &nbsp &nbsp <input type="text" name="othergender">
+
+<p style="font-size: small">&nbsp &nbsp &nbsp &nbsp Maximum of 250 characters. Currently Used: 0 characters.</p>
+<h4>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h4>
+<input type="checkbox" name="Product" value="Product 1"> Product 1<br>
+<input type="checkbox" name="Product" value="Product 2"> Product 2<br>
+<input type="checkbox" name="Product" value="Product 3"> Product 3<br>
+<input type="checkbox" name="Product" value="Product 4"> Product 4<br>
+<h4>How often would you use our new product?</h4>
+<input type="radio" name="Frequence" value="Daily"> Daily<br>
+<input type="radio" name="Frequence" value="Weekly"> Weekly<br>
+<input type="radio" name="Frequency" value="Monthly"> Monthly<br>
+<h4>What would you pay for the new product?</h4>
+<table>
+  <tr>
+    <td>$ <input type="number" name="Dollars" style="width: 64px"></td>
+    <td>.<input type="number" name="cents" style="width: 24px"></td>
+  </tr>
+<tr>
+  <td>&nbsp&nbsp Dollars</td>
+  <td>&nbspcents</td>
+</tr>
+</table>
+<h4>What features would you like to see in the new product.</h4>
+<textarea></textarea>
+<p>Please rate your level of agreement with the following statements.</p>
+<table border="1" id="border2">
+  <tr style="background-color: #cccccc">
+    <td></td>
+    <td style="width: 130px; text-align: center">Strongly Disagree</td>
+    <td style="width: 130px; text-align: center">Disagree</td>
+    <td style="width: 130px; text-align: center">Agree</td>
+    <td style="width: 130px; text-align: center">Strongly Agree</td>
+  </tr>
+  <tr>
+    <td>Our products are priced fairly.</td>
+    <td style="text-align: center"><input type="radio" name="Our products are priced fairly" value="Strongly Disagree"><br>1</td>
+    <td style="text-align: center"><input type="radio" name="Our products are priced fairly" value="Disagree"><br>2</td>
+    <td style="text-align: center"><input type="radio" name="Our products are priced fairly" value="Agree"><br>3</td>
+    <td style="text-align: center"><input type="radio" name="Our products are priced fairly" value="Strongly Agree"><br>4</td>
+  </tr>
+  <tr style="background-color: #e3e2e2">
+    <td>Our products are high quality.</td>
+    <td style="text-align: center"><input type="radio" name="Our products are high quality." value="Strongly Disagree"><br>1</td>
+    <td style="text-align: center"><input type="radio" name="Our products are high quality." value="Disagree"><br>2</td>
+    <td style="text-align: center"><input type="radio" name="Our products are high quality." value="Agree"><br>3</td>
+    <td style="text-align: center"><input type="radio" name="Our products are high quality." value="Strongly Agree"><br>4</td>
+  </tr>
+  <tr>
+    <td>You would recommend our product to a friend or coworker.</td>
+    <td style="text-align: center"><input type="radio" name="You would recommend our product to a friend or coworker" value="Strongly Disagree"><br>1</td>
+    <td style="text-align: center"><input type="radio" name="You would recommend our product to a friend or coworker" value="Disagree"><br>2</td>
+    <td style="text-align: center"><input type="radio" name="You would recommend our product to a friend or coworker" value="Agree"><br>3</td>
+    <td style="text-align: center"><input type="radio" name="You would recommend our product to a friend or coworker" value="Strongly Agree"><br>4</td>
+  </tr>
+</table>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
