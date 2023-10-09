@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    function dientich() {
+      const PI = 3.14;
+      let a = +document.getElementById("r").value;
+      let s = a*a*PI;
+      document.getElementById("kqs").innerHTML = "Diện tích đường tròn là " + s;
+    }
+    function chuvi() {
+      const PI = 3.14;
+      let a = +document.getElementById("r").value;
+      let c = a*2*PI;
+      document.getElementById("kqc").innerHTML = "Chu vi đường tròn là " + c;
+    }
+  </script>
+</head>
+<body>
+<p>Nhập bán kính đường tròn</p> <input type="number" min="0" id="r">
+<br><br>
+<button onclick="dientich()">Tính diện tích</button>
+<br><br>
+<button onclick="chuvi()">Tính chu vi</button>
+<br><br>
+<hr>
+<p id="kqs"></p>
+<p id="kqc"></p>
+</body>
+</html>
