@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Caculator</title>
+  <script>
+    function do_addition() {
+      let J_First = +document.getElementById("F_number").value;
+      let J_Second = +document.getElementById("S_number").value;
+      let J_addition = J_First + J_Second;
+      document.getElementById("result11").innerHTML = "result addition: " + J_addition;
+    }
+    function do_sub() {
+      let J_First = +document.getElementById("F_number").value;
+      let J_Second = +document.getElementById("S_number").value;
+      let J_sub = J_First - J_Second;
+      document.getElementById("result11").innerHTML = "result subtraction: " + J_sub;
+    }
+    function do_multi() {
+      let J_First = +document.getElementById("F_number").value;
+      let J_Second = +document.getElementById("S_number").value;
+      let J_multi = J_First * J_Second;
+      document.getElementById("result11").innerHTML = "result multiplication: " +  J_multi;
+    }function do_divi() {
+      let J_First = +document.getElementById("F_number").value;
+      let J_Second = +document.getElementById("S_number").value;
+      let J_divi = J_First / J_Second;
+      document.getElementById("result11").innerHTML = "result division: " +  J_divi;
+    }
+  </script>
+</head>
+<body>
+<h2>Caculator</h2>
+<table>
+  <tr>
+    <td><input type="number" name="First_number" id="F_number"></td>
+    <td><input type="number" name="Second_number" id="S_number"></td>
+  </tr>
+</table>
+<button onclick="do_addition()">Addition(+)</button> <button onclick="do_sub()">Subtraction(-)</button> <button onclick="do_multi()">Multiplication(x)</button> <button onclick="do_divi()">Division(/)</button>
+<p id="result11"></p>
+</body>
+</html>
