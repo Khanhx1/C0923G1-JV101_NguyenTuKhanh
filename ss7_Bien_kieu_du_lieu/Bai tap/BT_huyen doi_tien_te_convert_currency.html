@@ -8,54 +8,54 @@
       text-align: left;
     }
   </style>
-<script>
-  function convert_currency_1x() {
-    let Amount1 = document.getElementById("AmountFT").value;
-    let Tcurrency1 = document.getElementById("TCurrency").value;
-    let Fcurrency1 = document.getElementById("FCurrency").value;
-    let result;
-    if(Fcurrency1 == "USD" && Tcurrency1 == "VND") {
-      result = "Result: " + (Amount1 * 23000) + " VND"
-    }
-    else
-    if(Fcurrency1 == "VND" && Tcurrency1 == "USD") {
-      result = "Result: " + (Amount1 / 23000) + " USD"
-    }
-    else
-    if(Fcurrency1 == "VND") {
-      result = "Result: " + Amount1 + " VND"
-    }
-    else
-      result = "Result: " + Amount1 + " USD"
-    document.getElementById("resultx1").innerHTML = result;
-  }
-</script>
 </head>
 <body>
 <table border="0">
   <tr>
-    <th><label for="AmountFT">Amount</label></th>
-    <th><label for="FCurrency">From Currency</label></th>
-    <th><label for="TCurrency">To Currency</label></th>
+    <th><label for="amount">Amount</label></th>
+    <th><label for="fromCurren">From Currency</label></th>
+    <th><label for="toCurren">To Currency</label></th>
   </tr>
   <tr>
-    <td style="width: 24px"><input type="number" min="0" name="amount" id="AmountFT"></td>
+    <td style="width: 24px"><input type="number" min="0" name="amount" id="amount"></td>
     <td style="width: 150px">
-      <select name="from_currency" id="FCurrency">
+      <select name="from_currency" id="fromCurren">
         <option value="VND">VND</option>
         <option value="USD">USD</option>
       </select>
     </td>
     <td>
-      <select name="to_currency" id="TCurrency">
+      <select name="to_currency" id="toCurren">
         <option value="USD">USD</option>
         <option value="VND">VND</option>
       </select>
     </td>
-    <td><button onclick="convert_currency_1x()">Convert</button></td>
+    <td><button onclick="convert()">Convert</button></td>
     </tr>
 </table>
 <br>
-<p id="resultx1"></p>
+<p id="result"></p>
+<script>
+  function convert() {
+    let amount = document.getElementById("amount").value;
+    let toCurren = document.getElementById("toCurren").value;
+    let fromCurren = document.getElementById("fromCurren").value;
+    let result;
+    if(fromCurren == "USD" && toCurren == "VND") {
+      result = "Result: " + (amount * 23000) + " VND"
+    }
+    else
+    if(fromCurren == "VND" && toCurren == "USD") {
+      result = "Result: " + (amount / 23000) + " USD"
+    }
+    else
+    if(fromCurren == "VND") {
+      result = "Result: " + amount + " VND"
+    }
+    else
+      result = "Result: " + amount + " USD"
+    document.getElementById("result").innerHTML = result;
+  }
+</script>
 </body>
 </html>

@@ -3,41 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Caculator</title>
-  <script>
-    function do_addition() {
-      let J_First = +document.getElementById("F_number").value;
-      let J_Second = +document.getElementById("S_number").value;
-      let J_addition = J_First + J_Second;
-      document.getElementById("result11").innerHTML = "result addition: " + J_addition;
-    }
-    function do_sub() {
-      let J_First = +document.getElementById("F_number").value;
-      let J_Second = +document.getElementById("S_number").value;
-      let J_sub = J_First - J_Second;
-      document.getElementById("result11").innerHTML = "result subtraction: " + J_sub;
-    }
-    function do_multi() {
-      let J_First = +document.getElementById("F_number").value;
-      let J_Second = +document.getElementById("S_number").value;
-      let J_multi = J_First * J_Second;
-      document.getElementById("result11").innerHTML = "result multiplication: " +  J_multi;
-    }function do_divi() {
-      let J_First = +document.getElementById("F_number").value;
-      let J_Second = +document.getElementById("S_number").value;
-      let J_divi = J_First / J_Second;
-      document.getElementById("result11").innerHTML = "result division: " +  J_divi;
-    }
-  </script>
 </head>
 <body>
 <h2>Caculator</h2>
 <table>
   <tr>
-    <td><input type="number" name="First_number" id="F_number"></td>
-    <td><input type="number" name="Second_number" id="S_number"></td>
+    <td><input type="number" name="First_number" id="firstnumb"></td>
+    <td><input type="number" name="Second_number" id="secondnumb"></td>
   </tr>
 </table>
-<button onclick="do_addition()">Addition(+)</button> <button onclick="do_sub()">Subtraction(-)</button> <button onclick="do_multi()">Multiplication(x)</button> <button onclick="do_divi()">Division(/)</button>
+<button onclick="add()">Addition(+)</button> <button onclick="sub()">Subtraction(-)</button> <button onclick="multi()">Multiplication(x)</button> <button onclick="div()">Division(/)</button>
 <p id="result11"></p>
+<script>
+  function add() {
+    let firstNumber = +document.getElementById("firstnumb").value;
+    let secondNumber = +document.getElementById("secondnumb").value;
+    let add = firstNumber + secondNumber;
+    document.getElementById("result11").innerHTML = "result addition: " + add;
+  }
+  function sub() {
+    let firstNumber = +document.getElementById("firstnumb").value;
+    let secondNumber = +document.getElementById("secondnumb").value;
+    let sub = firstNumber - secondNumber;
+    document.getElementById("result11").innerHTML = "result subtraction: " + sub;
+  }
+  function multi() {
+    let firstNumber = +document.getElementById("firstnumb").value;
+    let secondNumber = +document.getElementById("secondnumb").value;
+    let multi = firstNumber * secondNumber;
+    document.getElementById("result11").innerHTML = "result multiplication: " +  multi;
+  }function div() {
+    let firstNumber = +document.getElementById("firstnumb").value;
+    let secondNumber = +document.getElementById("secondnumb").value;
+    let div = firstNumber / secondNumber;
+    document.getElementById("result11").innerHTML = "result division: " +  div;
+  }
+</script>
 </body>
 </html>
