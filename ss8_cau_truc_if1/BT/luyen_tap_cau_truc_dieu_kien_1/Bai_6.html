@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let quantity = +prompt("Nhập số lượng sản phẩm đã bán");
+  if(quantity == parseInt(quantity) && quantity >=0) {
+  const PRICE = 56000;
+  let revenue = quantity * PRICE;
+  if(quantity >= 1200)
+    document.write("Hoa hồng bạn nhận được là " + revenue * 0.25 + " đồng");
+  else if(quantity >= 800)
+    document.write("Hoa hồng bạn nhận được là " + revenue * 0.20 + " đồng");
+  else if(quantity >= 500)
+    document.write("Hoa hồng bạn nhận được là " + revenue * 0.15 + " đồng");
+  else if(quantity >= 300)
+    document.write("Hoa hồng bạn nhận được là " + revenue * 0.10 + " đồng");
+  else
+    document.write("Hoa hồng bạn nhận được là 0")
+  }
+  else
+  alert("Vui lòng nhập số sản phẩm hợp lệ");
+</script>
+</body>
+</html>

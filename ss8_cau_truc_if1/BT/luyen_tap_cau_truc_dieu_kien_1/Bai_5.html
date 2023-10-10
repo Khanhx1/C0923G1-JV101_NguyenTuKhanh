@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<script>
+  let pointIn = +prompt("nhập điểm bài kiểm tra trong kỳ");
+  if(pointIn >= 0 && pointIn <= 10) {
+    let pointMid = +prompt("nhập điểm bài kiểm tra giữa kỳ");
+    if (pointMid >= 0 && pointMid <= 10) {
+      let pointEnd = +prompt("nhập điểm bài kiểm tra cuối kỳ");
+      if (pointEnd >= 0 && pointEnd <= 10) {
+        let avg = (pointIn + pointMid + pointEnd) / 3;
+        if (avg >= 8.5)
+          document.write("Loại A");
+        else if (avg >= 7.0)
+          document.write("Loại B");
+        else if (avg >= 5.5)
+          document.write("Loại C");
+        else if (avg >= 4)
+          document.write("Loại D");
+        else
+          document.write("Loại F");
+      }
+      else
+        alert("Vui lòng nhập điểm hợp lệ");
+    }
+    else
+      alert("Vui lòng nhập điểm hợp lệ");
+  }
+  else
+    alert("Vui lòng nhập điểm hợp lệ");
+</script>
+</body>
+</html>
