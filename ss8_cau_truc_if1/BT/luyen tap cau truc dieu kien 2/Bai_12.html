@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let loan = +prompt("Nhập số tiền vay ngân hàng");
+  let month = +prompt("Nhập số tháng muốn gửi");
+  let interestRate = +prompt("Nhập lãi suất hàng tháng");
+  if (loan > 0 && month > 0 && interestRate > 0) {
+    document.write("Số tiền phải trả là: " + loan * Math.pow((1 + interestRate / 100), month) + "đồng");
+  }
+  else
+    alert("Số nhập không hợp lệ");
+</script>
+</body>
+</html>

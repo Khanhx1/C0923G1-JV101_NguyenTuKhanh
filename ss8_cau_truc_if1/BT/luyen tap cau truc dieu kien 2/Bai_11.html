@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--Bậc 1--Từ 0-5: 5%    (dvt: triệu đồng)
+Bậc 2--Trên 5-10: 10%
+Bậc 3--Trên 10-18: 15%
+Bậc 4--Trên 18-: 20% -- Chỉ tính đến bậc 4-->
+<script>
+  const LEVEL1 = 0.05;
+  const LEVEL2 = 0.1;
+  const LEVEL3 = 0.15;
+  const LEVEL4 = 0.2;
+  let totalIncome = +prompt("Nhập tổng mức thu nhập (triệu đồng)");
+  if(totalIncome >= 0) {
+    let salaryInsurance = +prompt("Nhập khoản tiền lương tính bảo hiểm (triệu đồng)");
+    if (salaryInsurance >= 0) {
+      let insurance = salaryInsurance * 0.105;
+      let dependants = +prompt("Nhập số người phụ thuộc");
+      if(dependants >= 0) {
+        let familyAllowances = 11 + 4.4 * dependants;
+        let taxableIncome = totalIncome - insurance - familyAllowances;
+        if(taxableIncome >= 0) {
+                if(taxableIncome <=5) {
+                  let payableTax1 = taxableIncome * LEVEL1;
+                  document.write("Tiền thuế TNCN phải nộp là: " + payableTax1 + " triệu đồng");
+                }
+                else if(taxableIncome <= 10) {
+                  let payableTax2 = 5 * LEVEL1 + (taxableIncome - 5) * LEVEL2;
+                  document.write("Tiền thuế TNCN phải nộp là: " + payableTax2 + " triệu đồng");
+                }
+                else if(taxableIncome <= 18) {
+                  let payableTax3 = 5 * LEVEL1 + 5 * LEVEL2 + (taxableIncome - 10) * LEVEL3;
+                  document.write("Tiền thuế TNCN phải nộp là: " + payableTax3 + " triệu đồng");
+                }
+                else {
+                  let payableTax4 = 5 * LEVEL1 + 5 * LEVEL2 + 8 * LEVEL3 + (taxableIncome - 18) * LEVEL4;
+                  document.write("Tiền thuế TNCN phải nộp là: " + payableTax4 + " triệu đồng");
+                }
+        }
+        else
+          document.write("Tiền thuế TNCN phải nộp là: 0 triệu đồng");
+      }
+      else
+      alert("số người phụ thuộc không hợp lệ");
+    }
+    else
+    alert("Khoản bảo hiểm không hợp lệ")
+  }
+  else
+    alert("Mức thu nhập không hợp lệ")
+</script>
+</body>
+</html>

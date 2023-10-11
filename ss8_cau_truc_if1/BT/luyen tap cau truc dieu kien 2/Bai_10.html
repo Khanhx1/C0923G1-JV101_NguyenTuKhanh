@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--Bậc 1: 0-50kwh: 1728 (đồng/kwh)
+Bậc 2: 51-100kwh: 1786 (đồng/kwh)
+Bậc 3: 101-200kwh: 2074 (đồng/kwh)
+Bậc 4: 201-> kwh: 2612 (đồng/kwh) -->
+</body>
+<script>
+  let kwh = +prompt("Nhập số kwh");
+  const LEVEL1 = 1728;
+  const LEVEL2 = 1786;
+  const LEVEL3 = 2074;
+  const LEVEL4 = 2612;
+  if(kwh >= 0) {
+    if(kwh < 51) {
+      let price1 = kwh * LEVEL1
+      document.write("Giá điện phải trả là: " + price1 + " đồng");
+    }
+    else if(kwh < 101) {
+      let price2 = 50 * LEVEL1 + (kwh - 50) * LEVEL2;
+      document.write("Giá điện phải trả là: " + price2 + " đồng");
+    }
+    else if(kwh < 201) {
+      let price3 = 50 * LEVEL1 + 50 * LEVEL2 + (kwh - 100) * LEVEL3;
+      document.write("Giá điện phải trả là: " + price3 + " đồng");
+    }
+    else {
+      let price4 =  50 * LEVEL1 + 50 * LEVEL2 + 100 * LEVEL3 + (kwh - 200) * LEVEL4;
+      document.write("Giá điện phải trả là: " + price4 + " đồng");
+    }
+  }
+  else
+    alert("Vui lòng nhập số kwh hợp lệ");
+
+</script>
+</html>

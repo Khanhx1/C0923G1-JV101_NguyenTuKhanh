@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--ax^2+bx+c=0-->
+<script>
+  let a = +prompt("Nhập hệ số a của phương trình bậc 2");
+  let b = +prompt("Nhập hệ số b của phương trình bậc 2");
+  let c = +prompt("Nhập hệ số c của phương trình bậc 2");
+  let delta = b * b - 4 * a * c;
+  if(a > 0 || a < 0) {
+    if(delta > 0) {
+      let x1 = (-1 * b + Math.sqrt(delta)) / (2 * a);
+      let x2 = (-1 * b - Math.sqrt(delta)) / (2 * a);
+      document.write("Phương trình bậc hai có 2 nghiệm phân biệt là: x1= " + x1 + ", x2= " + x2);
+    }
+    else if(delta === 0) {
+      let x = (-1 * b) / (2 * a);
+      document.write("Phương trình bậc hai có nghiệm kép x= " + x);
+    }
+    else
+      document.write("Phương trình bậc hai vô nghiệm");
+  }
+  else
+    alert("Hệ số a bậc 2 của phương trình phải khác 0 hoặc phải là ký tự số");
+</script>
+</body>
+</html>
