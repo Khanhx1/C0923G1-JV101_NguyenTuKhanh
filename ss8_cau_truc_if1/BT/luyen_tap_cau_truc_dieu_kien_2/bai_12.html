@@ -12,8 +12,9 @@
   if (loan > 0 && month > 0 && interestRate > 0) {
     document.write("Số tiền phải trả là: " + loan * Math.pow((1 + interestRate / 100), month) + "đồng");
   }
-  else
+  else {
     alert("Số nhập không hợp lệ");
+  }
 </script>
 </body>
 </html>

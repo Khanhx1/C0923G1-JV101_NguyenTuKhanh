@@ -9,12 +9,15 @@
   let a = +prompt("Nhập hệ số a của phương trình bậc 1 có dạng ax+b=0");
   let b = +prompt("Nhập hệ số b của phương trình bậc 1 có dạng ax+b=0");
   let x = -1 * (b/a);
-  if(a === 0 && b === 0)
+  if(a === 0 && b === 0) {
     document.write("Phương trình có vô số nghiệm");
-  else if(a === 0 && b !== 0)
+  }
+  else if(a === 0 && b !== 0) {
     document.write("Phương trình vô nghiệm");
-  else
-  document.write("Phương trình có nghiệm x = " + x);
+  }
+  else {
+    document.write("Phương trình có nghiệm x = " + x);
+  }
 </script>
 </body>
 </html>
