@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let countPrime = 0;
+  let number = 2;
+  let count;
+  while (countPrime < 20) {
+    count = 0;
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        count++;
+        break;
+      }
+    }
+    if (count === 0) {
+      document.write(number + "<br>");
+      countPrime++;
+    }
+    number++;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let fibo1 = 0;
+  let fibo2 = 1;
+  let fiboNext;
+  let sum = 1;
+  for (let i = 3; i <= 20; i++) {
+    fiboNext = fibo1 + fibo2;
+    sum += fiboNext;
+    fibo1 = fibo2;
+    fibo2 = fiboNext;
+  }
+  document.write(sum);
+</script>
+</body>
+</html>

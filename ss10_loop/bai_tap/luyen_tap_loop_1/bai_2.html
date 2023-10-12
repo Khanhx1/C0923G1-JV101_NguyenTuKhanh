@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let temperature = +prompt("Nhập thông tin nhiệt độ");
+  while (temperature > 100 || temperature < 20) {
+    if(temperature > 100){
+      alert("Yêu cầu giảm nhiệt độ");
+      temperature = +prompt("Nhập thông tin nhiệt độ");
+    }
+    if(temperature < 20){
+      alert("Yêu cầu tăng nhiệt độ");
+      temperature = +prompt("Nhập thông tin nhiệt độ");
+    }
+  }
+  document.write("Nhiệt độ hợp lệ");
+</script>
+</body>
+</html>
