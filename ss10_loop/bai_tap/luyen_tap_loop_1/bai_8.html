@@ -2,36 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>bai 8</title>
 </head>
 <body>
-  <button onclick="predictNumber()">Chơi</button>
-  <script>
-    function predictNumber() {
+<button onclick="predictNumber()">Chơi</button>
+<script>
+  function predictNumber() {
     let number = +prompt("Số muốn đoán trong khoảng nào");
     let numberRandom = Math.floor(Math.random() * number);
-    let predictedNumber = +prompt ("Nhập số muốn đoán");
+    let predictedNumber = +prompt("Nhập số muốn đoán");
     let count = 0;
     while (predictedNumber !== numberRandom) {
-    count++;
+      count++;
+      if (count === 3) {
+        alert("Hết lượt đoán");
+        break;
+      } else if (predictedNumber < numberRandom) {
+        alert("Số lớn hơn");
+      } else {
+        alert("Số nhỏ hơn");
+      }
+      predictedNumber = +prompt("Nhập số muốn đoán");
+    }
     if (count === 3) {
-    alert("Hết lượt đoán");
-    break;
-  }
-    else if (predictedNumber < numberRandom) {
-    alert("Số lớn hơn");
-  }
-    else {
-    alert ("Số nhỏ hơn");
-  }
-    predictedNumber = +prompt ("Nhập số muốn đoán");
-  }
-    if (count === 3) {
-    document.write("Trò chơi kết thúc");
-  }
-    else {
-    document.write("Chúc mừng đã đoán đúng số");
-  }
+      document.write("Trò chơi kết thúc");
+    } else {
+      document.write("Chúc mừng đã đoán đúng số");
+    }
   }
 </script>
 </body>
