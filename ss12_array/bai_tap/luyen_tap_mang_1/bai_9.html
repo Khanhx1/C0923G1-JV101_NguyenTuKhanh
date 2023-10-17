@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let arrayA = [];
+  let arrayB = [];
+  let arrayC = new Array(20);
+  for (let i = 0; i < 10; i++) {
+    arrayA[i] = +parseInt(prompt("nhập giá trị phần tử mảng A thứ " + i));
+  }
+  for (let i = 0; i < 10; i++) {
+    arrayB[i] = +parseInt(prompt("nhập giá trị phần tử mảng B thứ " + i));
+  }
+  for (let i = 0; i < arrayA.length; i++) {
+    arrayC[i] = arrayA[i];
+  }
+  for (let i = 0; i < arrayB.length; i++) {
+    arrayC[i + arrayA.length] = arrayB[i];    //gán tiếp giá trị cho phần tử của C bắt đầu từ [10] trở đi vì đã gán 10 giá trị đầu trước đó (length của A)
+  }
+  document.write(arrayC);
+
+
+</script>
+</body>
+</html>

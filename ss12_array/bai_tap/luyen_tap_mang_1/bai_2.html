@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let num = [];
+  let max;
+  let index;
+  for (let i = 0; i < 10; i++) {
+    num[i] = +parseInt(prompt("nhập phần tử thứ " + i));
+  }
+  max = num[0];
+  for (let j = 1; j < num.length; j++) {
+    if (max < num[j]) {
+      max = num[j];
+      index = j;
+    }
+  }
+  document.write("Số lớn nhất là: " + max + ", vị trí của phần tử này là: " + index);
+</script>
+</body>
+</html>

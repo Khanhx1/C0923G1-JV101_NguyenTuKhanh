@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let num = prompt("nhập số");
+  let numString = num.toString();
+  let result = [numString[0]];
+  let size = numString.length;
+  for (let i = 1; i < size; i++) {
+    if (numString[i - 1] % 2 === 0 && numString[i] % 2 === 0) {
+      result.push('-', numString[i]);
+    } else {
+      result.push(numString[i]);
+    }
+  }
+  document.write(result.join(' '));
+</script>
+</body>
+</html>

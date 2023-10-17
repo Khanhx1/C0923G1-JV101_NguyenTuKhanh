@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let num = [];
+  let count = 0;
+  for (let i = 0; i < 10; i++) {
+    num[i] = +parseInt(prompt("nhập phần tử thứ " + i));
+  }
+  for (let j = 0; j < num.length; j++) {
+    if (num[j] >= 10) {
+      count++
+    }
+  }
+  document.write("Có tất cả " + count + " số nguyên lớn hơn hoặc bằng 10");
+</script>
+</body>
+</html>

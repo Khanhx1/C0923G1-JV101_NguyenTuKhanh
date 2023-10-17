@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let array = [];
+  let lengthOfArray = parseInt(prompt("Nhấp số phần tử muốn khởi tạo"));
+  let count = 0;
+  for (let i = 0; i < lengthOfArray; i++) {
+    array[i] = +prompt("Nhập giá trị phần tử thứ " + i);
+  }
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] < 0 && parseInt(array[i]) === array[i]) {
+      count++
+    }
+  }
+  document.write("Có tổng cộng " + count + " số nguyên âm");
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let array = [];
+  let comparedNum;
+  for (let i = 0; i < 10; i++) {
+    array[i] = +parseInt(prompt("nhập giá trị phần tử thứ " + i));
+  }
+  // sắp xếp theo thứ tự lớn --> bé bằng cách so sánh lần lượt số đầu tiên với các
+  // số còn lại, i++ số thứ 2 với các số còn lại (từ số thứ 2 trở đi) trong dãy số ,...vv - đảo vị trí khi phát hiện số lớn hơn
+
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] < array[j]) {
+        comparedNum = array[i];
+        array[i] = array[j];           // gán phần tử 1 bằng giá trị phần tử 2
+        array[j] = comparedNum;        // gán phần tử 2 bằng giá trị phần tử 1
+      }
+    }
+  }
+  document.write(array);
+</script>
+</body>
+</html>

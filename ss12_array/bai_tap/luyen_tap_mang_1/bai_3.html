@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let array = [];
+  let lengthOfArray = parseInt(prompt("Nhập số phần tử muốn khởi tạo"));
+  let sum = 0;
+  for (let i = 0; i < lengthOfArray; i++) {
+    array[i] = +parseInt(prompt("Nhập giá trị phần tử thứ " + i));
+  }
+  let max = array[0]
+  for (let i = 0; i < array.length; i++) {
+    if (max < array[i]) {
+      max = array[i]
+    }
+    sum += array[i];
+  }
+  document.write("Giá trị lớn nhất trong mảng là: " + max + "<br>");
+  document.write("Trung bình là: " + (sum / array.length));
+</script>
+</body>
+</html>

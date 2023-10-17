@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let text = prompt("nhập 1 đoạn văn bản");
+  let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let lower = "abcdefghijklmnopqrstuvwxyz";
+  let result = [];
+  let sizeText = text.length;
+  for (let i = 0; i < sizeText; i++) {
+    if (upper.includes(text[i])) {
+      result.push(text[i].toLowerCase());
+    } else if (lower.includes(text[i])) {
+      result.push(text[i].toUpperCase());
+    } else {
+      result.push(text[i]);
+    }
+  }
+  document.write(result.join(''));
+</script>
+</body>
+</html>

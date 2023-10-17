@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let array = [];
+  let lengthOfArray = parseInt(prompt("Nhấp số phần tử muốn khởi tạo"));
+  let firstSwapNum;
+  for (let i = 0; i < lengthOfArray; i++) {
+    array[i] = +parseInt(prompt("Nhập giá trị phần tử thứ " + i));
+  }
+  // để đảo ngược dùng cách hoán đổi hai số đầu và cuối cho nhau
+  for (let i = 0; i < array.length / 2; i++) {     //i < array.length chia 2 vì khi hoán đổi thì i chỉ chạy đến 1 nửa
+    firstSwapNum = array[i];
+    array[i] = array[array.length - 1 - i];      //array[array.length - 1 - i] là số cuối cần hoán đổi
+    array[array.length - 1 - i] = firstSwapNum;
+  }
+  document.write(array);
+</script>
+</body>
+</html>

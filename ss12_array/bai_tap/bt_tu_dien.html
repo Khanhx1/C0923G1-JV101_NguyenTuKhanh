@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<label for="string">Nhập từ tiếng anh</label>
+<input type="text" name="" id="string">
+<button onclick="trans()">Dịch</button>
+<p id="result"></p>
+<script>
+  function trans() {
+    let eng = ["computer", "mouse", "keyboard", "monitor", "headphone", "fan"];
+    let vi = ["máy tính", "chuột", "bàn phím", "màn hình", "tai nghe", "quạt"];
+    let string = document.getElementById("string").value;
+    let sizeEng = eng.length;
+    let indexOfVi;
+    let count = 0;
+    for (let i = 0; i < sizeEng; i++) {
+      if (eng[i] === string) {
+        indexOfVi = i;
+        count++;
+        break;
+      }
+    }
+    if (count === 1) {
+      document.getElementById("result").innerHTML = vi[indexOfVi];
+    } else {
+      document.getElementById("result").innerHTML = "Không nằm trong từ điển"
+    }
+  }
+</script>
+</body>
+</html>
