@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //em note lại để sau này xem lại bài cho dễ hiểu với đỡ bị nhầm thôi anh, not GPT -!(^_^)!
+  let row = +parseInt(prompt("Nhập số hàng của mảng hai chiều"));
+  let colum = +parseInt(prompt("Nhập số cột của mảng hai chiều"));
+  let array2d = new Array(row);   // tạo (row-số được nhập) phần tử rỗng trong array2d
+  for (let i = 0; i < row; i++) {
+    array2d[i] = new Array(colum);   // mỗi (row-số được nhập) phần tử (chạy từ 0 --> row) tạo ra bên trong (colum-số được nhập) phần tử nữa.
+  }
+  // gán giá trị cho mỗi phần tử mảng 2 chiều
+  for (let i = 0; i < colum; i++) {
+    for (let j = 0; j < colum; j++) {
+      array2d[i][j] = prompt("Nhập phần tử thứ " + j + " hàng " + i);
+    }
+  }
+  // Hiển thị kết quả
+  for (let i = 0; i < row; i++) {
+    document.write("row " + i + "<br>");
+    for (let j = 0; j < colum; j++) {
+      document.write(array2d[i][j] + "<br>");
+    }
+  }
+</script>
+</body>
+</html>

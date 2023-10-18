@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let array = [];
+  let lengthOfArr = +parseInt(prompt("Nhập độ dài của mảng"));
+  for (let i = 0; i < lengthOfArr; i++) {
+    array[i] = prompt("nhập giá trị phần tử thứ " + i);
+  }
+  let firstSwapValue;
+  for (let i = 0; i < lengthOfArr / 2; i++) {
+    firstSwapValue = array[i];
+    array[i] = array[lengthOfArr - 1 - i];            //đổi chỗ số đầu với số cuối  ( giống bài 4 luyện tập mảng 1)
+    array[lengthOfArr - 1 - i] = firstSwapValue;      //đổi chỗ số cuối với số đầu - có thể dùng hàm reverse.
+  }
+  document.write(array.join(""));
+</script>
+</body>
+</html>

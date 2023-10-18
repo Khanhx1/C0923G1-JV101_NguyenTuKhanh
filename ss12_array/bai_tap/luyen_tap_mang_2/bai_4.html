@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let string = prompt("Nhập vào 1 chuỗi");
+  let countWord = 0;                                    //đếm từ
+  let countCharWithoutSpace = 0;                        //đếm từng ký tự nhưng ko có dấu cách
+  for (let i = 0; i < string.length - 1; i++) {
+    if (string[i] === " " && string[i + 1] !== " ") {   //Nếu i có khoảng cách và i+1 có chữ thì đếm 1 từ, ok??
+      countWord++;                                     //di dụ: " khanh" thì đếm 1 chữ
+    }
+    if (string[i] !== " ") {                           //dòng này để đếm từng ký tự một ko có dấu " "(ý tưởng là nếu tổng độ dài-length
+      countCharWithoutSpace++;                         //bằng chính xác số lần đếm không có dấu cách thì => có 1 từ duy nhất)
+    }
+  }
+  if (countCharWithoutSpace === string.length) {
+    document.write("Có 1 từ trong chuỗi này");
+  } else if (string[0] !== " ") {                                     //bắt đầu bằng chữ thì +1 còn bắt đầu bằng khoảng
+    document.write("Có " + (countWord + 1) + " từ trong 1 chuỗi");   //trắng thì để nguyên.
+  } else {
+    document.write("Có " + countWord + " từ trong 1 chuỗi");
+  }
+</script>
+</body>
+</html>
