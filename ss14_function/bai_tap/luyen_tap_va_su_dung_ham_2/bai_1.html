@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function calculateSquare(num) {
+    return Math.pow(num, 2);
+  }
+
+  let num = +prompt("Nhập số tính bình phương");
+  while (isNaN(parseInt(num))) {
+    alert("Yêu cầu nhập ký tự số");
+    num = +prompt("Nhập số tính bình phương");
+  }
+  document.write(calculateSquare(num));
+
+</script>
+</body>
+</html>

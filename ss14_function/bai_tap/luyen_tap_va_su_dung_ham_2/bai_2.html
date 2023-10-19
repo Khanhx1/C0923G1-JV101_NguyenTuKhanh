@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  const PI = 3.14;
+  let area;
+  let circumference;
+  let result;
+
+  function calculateArea(radius) {
+    area = PI * Math.pow(radius, 2);
+    circumference = 2 * PI * radius;
+    result = "Diện tích hình tròn là " + area + ", chu vi hình tròn là " + circumference;
+    return result;
+  }
+
+  let radius = +prompt("Nhập bán kính đường tròn");
+  while (isNaN(parseInt(radius))) {
+    alert("Yêu cầu nhập ký tự số");
+    radius = +prompt("Nhập bán kính đường tròn");
+  }
+  document.write(calculateArea(radius));
+</script>
+</body>
+</html>

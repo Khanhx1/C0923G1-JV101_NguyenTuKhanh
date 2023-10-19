@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="inputNum">Nhập số cần kiểm tra</label><br><input type="number" min="2" id="inputNum">&nbsp&nbsp
+<button onclick="checkPrime()">kiểm tra</button>
+<br>
+<p id="resultCheck"></p>
+<hr>
+<label for="inputMax">Hiển thị các số nguyên tố nhỏ hơn</label><input type="number" min="1" id="inputMax"><br>
+<button onclick="displayPrime()">Hiển thị</button>
+<p id="resultDisplayPrime"></p>
+<script>
+    function isPrime(number) {
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function checkPrime() {
+        let checkNum = +document.getElementById("inputNum").value;
+        if (parseInt(checkNum) === checkNum) {
+            if (isPrime(checkNum)) {
+                document.getElementById("resultCheck").innerHTML = checkNum + " là số nguyên tố"
+            } else {
+                document.getElementById("resultCheck").innerHTML = checkNum + " không phải là số nguyên tố"
+            }
+        } else {
+            alert("Vui lòng nhập số nguyên để kiểm tra");
+        }
+    }
+
+    function displayPrime() {
+        let num = 2;
+        let maxNum = +document.getElementById("inputMax").value;
+        let stringNum = "";
+        while (num < maxNum) {
+            if (isPrime(num)) {
+                num.toString();
+                stringNum += num + "<br>";
+            }
+            num++;
+        }
+        document.getElementById("resultDisplayPrime").innerHTML = stringNum;
+    }
+
+
+</script>
+</body>
+</html>
