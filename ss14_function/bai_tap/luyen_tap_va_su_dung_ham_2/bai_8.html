@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+  let lengthOfArrNum = +parseInt(prompt("Bạn muốn nhập bao nhiêu số"));
+  let arrOfNum = [];
+  for (let i = 0; i < lengthOfArrNum; i++) {
+    arrOfNum[i] = +prompt("Nhập số nguyên thứ " + (i + 1));
+    while (parseInt(arrOfNum[i]) !== arrOfNum[i]) {
+      alert("yêu cầu nhập số nguyên");
+      arrOfNum[i] = +prompt("Nhập số nguyên thứ " + (i + 1));
+    }
+  }
+
+  function reverseInteger(arr) {
+    arr.reverse()
+    return arr;
+  }
+
+  document.write(reverseInteger(arrOfNum));
+</script>
+</body>
+</html>

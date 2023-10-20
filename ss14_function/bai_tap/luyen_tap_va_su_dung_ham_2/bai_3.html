@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let expon = 1;
+
+  function calculateExponentiation(num) {
+    for (let i = 1; i <= num; i++) {
+      expon *= i;
+    }
+    return expon;
+  }
+
+  let num = +prompt("Nhập số nguyên");
+  while (parseInt(num) !== num) {
+    alert("Vui lòng nhập số nguyên");
+    num = +prompt("Nhập số nguyên");
+  }
+  document.write(calculateExponentiation(num));
+</script>
+</body>
+</html>

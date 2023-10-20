@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  function checkNumbericCharacter(character) {
+    if (isNaN(parseInt(character))) {
+      return false;
+    }
+    return true;
+  }
+
+  let notNumbericChar = 0;
+  let string = prompt("Nhập vào các ký tự");
+  for (let i = 0; i < string.length; i++) {
+    if (!checkNumbericCharacter(string[i])) {
+      notNumbericChar++
+    }
+  }
+  if (notNumbericChar === 0) {
+    document.write(string + " là ký tự số");
+  } else {
+    document.write(string + " không phải là ký tự số");
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //  Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là
+  //  nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.
+  let num;
+
+  function checkPositiveInteger() {
+    num = +prompt("nhập vào 1 số");
+    while (isNaN(parseInt(num))) {
+      alert("vui lòng nhập ký tự số");
+      num = +prompt("nhập vào 1 số");
+    }
+    if (parseInt(num) === num && num > 0) {
+      return true;
+    }
+    return false;
+  }
+
+  if (checkPositiveInteger()) {
+    document.write(num + " là số nguyên dương");
+  } else {
+    document.write(num + " không phải là số nguyên dương");
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm
+  // trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+  function checkCharacter() {
+    let arr = [];
+    let sizeOfArr = +parseInt(prompt("Nhập kích thươc của mảng"));
+    while (isNaN(parseInt(sizeOfArr))) {
+      alert("Vui lòng nhập ký tự số");
+      sizeOfArr = +parseInt(prompt("Nhập kích thươc của mảng"));
+    }
+    let count = 0;
+    for (let i = 0; i < sizeOfArr; i++) {
+      arr[i] = prompt("nhập ký tự thứ " + (i + 1));
+    }
+    let randomChar = prompt("Nhập ký tự bất kỳ");
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === randomChar) {
+        count++;
+      }
+    }
+    if (count === 0) {
+      return -1;
+    }
+    return count;
+  }
+
+  document.write(checkCharacter());
+</script>
+</body>
+</html>

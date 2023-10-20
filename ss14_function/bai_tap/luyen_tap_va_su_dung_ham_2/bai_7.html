@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+  function swapTwoNumbers() {
+    let firstNum = +prompt("Nhập vào số thứ nhất");
+    let secondNum = +prompt("Nhập vào số thứ hai");
+    let firstValue = firstNum;
+    firstNum = secondNum;
+    secondNum = firstValue;
+    document.write("2 số sau khi đổi vị trí cho nhau là:" + "<br>" + "số thứ nhất: " + firstNum + "<br>" + "số thứ hai: " + secondNum);
+  }
+
+  swapTwoNumbers()
+</script>
+</body>
+</html>

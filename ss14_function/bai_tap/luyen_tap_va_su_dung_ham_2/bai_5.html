@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  function displayMinNum() {
+    let lengthOfArrNum = +parseInt(prompt("Bạn muốn nhập bao nhiêu số"));
+    let arrOfNum = [];
+    for (let i = 0; i < lengthOfArrNum; i++) {
+      arrOfNum[i] = +prompt("Nhập số thứ " + (i + 1));
+      while (parseInt(arrOfNum[i]) !== arrOfNum[i]) {
+        alert("yêu cầu nhập số nguyên");
+        arrOfNum[i] = +prompt("Nhập số thứ " + (i + 1));
+      }
+    }
+    arrOfNum.sort(function (a, b) {
+      return a - b
+    })
+    return arrOfNum[0];
+  }
+
+  document.write(displayMinNum());
+</script>
+</body>
+</html>
