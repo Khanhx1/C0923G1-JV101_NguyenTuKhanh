@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<canvas id="rectangle" width="1000" height="1000"></canvas>
+<script>
+  class Rectangle {
+    constructor(length, width) {
+      this.length = length;
+      this.width = width;
+    }
+
+    getArea() {
+      return this.length * this.width;
+    }
+
+    getPerimeter() {
+      return (this.length + this.width) * 2;
+    }
+
+    displayRectangle() {
+      let canvas = document.getElementById("rectangle");
+      if (canvas.getContext) {
+        let ctx = canvas.getContext('2d');
+        ctx.lineWidth = "3";
+        ctx.strokeStyle = "black";
+        ctx.strokeRect(5, 5, this.length, this.width);
+      }
+    }
+
+    changeLengthWidthDimensions(length, width) {
+      this.length = length;
+      this.width = width;
+    }
+  }
+
+  let rectangle1 = new Rectangle(500, 300);
+  rectangle1.displayRectangle();
+  rectangle1.changeLengthWidthDimensions(400, 200);
+  alert(`Diện tích hình chữ nhật là: ${rectangle1.getArea()}, chu vi hình chữ nhật là: ${rectangle1.getPerimeter()}`);
+</script>
+</body>
+</html>

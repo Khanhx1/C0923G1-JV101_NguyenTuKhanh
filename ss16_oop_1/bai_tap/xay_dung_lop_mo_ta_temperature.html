@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  class Temperature {
+    constructor(celsius) {
+      if (celsius < -273) {
+        throw new Error("Temperate below -273 is invalid");
+      }
+      this.celsius = celsius;
+    }
+
+    getFahrenheit() {
+      return (this.celsius * 9 / 5) + 32;
+    }
+
+    getKenvin() {
+      return this.celsius + 273.15;
+    }
+  }
+
+  let temperature = new Temperature(25);
+  document.write(`Nhiệt độ theo độ F là: ${temperature.getFahrenheit()}, nhiệt độ theo độ C là: ${temperature.getKenvin()}`);
+</script>
+</body>
+</html>
