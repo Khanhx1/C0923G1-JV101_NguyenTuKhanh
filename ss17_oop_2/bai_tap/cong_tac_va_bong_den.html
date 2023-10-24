@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  class ElectricLamp {
+    constructor(status) {
+      this.status = status;
+    }
+
+    getStatus() {
+      return this.status;
+    }
+
+    turnOnElectricLamp() {
+      this.status = true;
+    }
+
+    turnOffElectricLamp() {
+      this.status = false;
+    }
+  }
+
+  class SwitchButton {
+    constructor(status, lamp) {
+      this.status = status;
+      this.lamp = lamp;
+    }
+
+    getStatus() {
+      return this.status;
+    }
+
+    connectToLamp(lamp) {
+      this.lamp = lamp;
+    }
+
+    turnOnSwitch() {
+      this.status = true;
+      this.lamp.turnOnElectricLamp();
+    }
+
+    turnOffSwitch() {
+      this.status = false;
+      this.lamp.turnOffElectricLamp();
+    }
+  }
+
+  let lamp = new ElectricLamp(false);
+  let switchButton = new SwitchButton(false, lamp);
+  for (let i = 1; i <= 10; i++) {
+    document.write("Lần bật tắt thứ " + i + "<br>");
+    switchButton.turnOnSwitch();
+    if (switchButton.getStatus() === true && lamp.getStatus() === true) {
+      document.write("Công tắc đã bật và đèn bật" + "<br>");
+    } else {
+      document.write("đèn hoặc công tắc hỏng")
+    }
+    switchButton.turnOffSwitch();
+    if (switchButton.getStatus() === false && lamp.getStatus() === false) {
+      document.write("Công tắc đã tắt và đèn tắt" + "<br>");
+    } else {
+      document.write("đèn hoặc công tắc hỏng");
+    }
+    document.write("-------------------------------------------" + "<br>");
+  }
+</script>
+</body>
+</html>

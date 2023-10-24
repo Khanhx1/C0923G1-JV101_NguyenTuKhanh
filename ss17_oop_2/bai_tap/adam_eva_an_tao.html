@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  class Apple {
+    constructor(weight) {
+      this.weight = weight;
+    }
+
+    getWeight() {
+      return this.weight;
+    }
+
+    isEmpty() {
+      if (this.weight <= 0) {
+        return true;
+      }
+      return false;
+    }
+
+    decreaseApple() {
+      if (this.isEmpty()) {
+        alert("Hết táo rùi");
+      } else {
+        this.weight--;
+      }
+    }
+  }
+
+  class Human {
+    constructor(name, gender, weight) {
+      this.name = name;
+      this.gender = gender;
+      this.weight = weight;
+    }
+
+    isMale() {
+      if (this.gender === 1) {
+        return true;
+      }
+      return false;
+    }
+
+    getGender() {
+      if (this.isMale()) {
+        return "Male";
+      }
+      return "Female";
+    }
+
+    checkApple(apple) {
+      return apple.isEmpty();
+    }
+
+    eatApple(apple) {
+      if (apple.getWeight() > 0) {
+        apple.decreaseApple();
+        this.weight++;
+      } else {
+        alert("Còn đâu mà ăn")
+      }
+    }
+
+    saySomething(string) {
+      console.log(string);
+    }
+
+    getName() {
+      return this.name;
+    }
+
+    getWeight() {
+      return this.weight;
+    }
+  }
+
+  let adam = new Human("Adam", 1, 70);
+  let eva = new Human("Eva", 2, 65);
+  let apple = new Apple(10);
+
+  adam.saySomething("gâu gâu");
+  eva.saySomething("meow meow");
+
+  document.write(`Quả táo ban đầu nặng: ${apple.getWeight()} đơn vị <br>`);
+  document.write(`adam ban đầu nặng: ${adam.getWeight()} đơn vị <br>`);
+  document.write(`eva ban đầu nặng: ${eva.getWeight()} đơn vị <br>`);
+  document.write("<hr>");
+  while (!apple.isEmpty()) {
+    document.write('+ adam ăn táo <br>');
+    adam.eatApple(apple);
+    document.write(`Trọng lượng còn lại của quả táo là: ${apple.getWeight()} đơn vị <br>`);
+    document.write(`Trọng lượng của adam là: ${adam.getWeight()} đơn vị <br>`);
+    document.write('+ eva ăn táo <br>');
+    eva.eatApple(apple);
+    document.write(`Trọng lượng còn lại  của quả táo là: ${apple.getWeight()} đơn vị <br>`);
+    document.write(`Trọng lượng của eva là: ${eva.getWeight()} đơn vị <br>`);
+    document.write("---------------------------" + "<br>");
+  }
+</script>
+</body>
+</html>
