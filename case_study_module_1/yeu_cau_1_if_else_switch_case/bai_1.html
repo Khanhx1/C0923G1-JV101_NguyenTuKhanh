@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let salary = +prompt("Nhập mức lương (triệu)");
+  while (salary < 0 || isNaN(parseInt(salary))) {
+    alert("vui lòng nhập số tiền hợp lệ");
+    salary = +prompt("Nhập mức lương (triệu)");
+  }
+  let tax;
+  let salaryAfterTax;
+  if (salary < 7) {
+    tax = salary * 0.05;
+  } else if (salary < 15) {
+    tax = 7 * 0.05 + (salary - 7) * 0.1;
+  } else {
+    tax = 7 * 0.05 + 8 * 0.1 + (salary - 15) * 0.2;
+  }
+  salaryAfterTax = salary - tax;
+  document.write(`Số thuế phải nộp là: ${tax} triệu đồng, tiền lương thực nhận sau thuế là: ${salaryAfterTax} triệu đồng`);
+</script>
+</body>
+</html>

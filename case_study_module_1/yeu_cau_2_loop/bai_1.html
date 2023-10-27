@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let height = +parseInt(prompt("Nhập vào chiều cao (cạnh) của tam giác vuông cân"));
+  while (height < 2 || isNaN(parseInt(height))) {
+    alert("Chiều dài của chiều cao tam giác phải bắt đầu từ 2 trở đi");
+    height = +parseInt(prompt("Nhập vào chiều cao (cạnh) của tam giác vuông cân"));
+  }
+  for (let i = 1; i <= height; i++) {
+    for (let j = 1; j <= height; j++) {
+      if (i === j || j === 1 || i === height) {
+        document.write("*");
+      } else {
+        document.write("&nbsp&nbsp");
+      }
+    }
+    document.write("<br>");
+  }
+</script>
+</body>
+</html>

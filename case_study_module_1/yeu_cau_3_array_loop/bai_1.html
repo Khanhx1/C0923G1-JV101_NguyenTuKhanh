@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let a = [];
+  let b = [];
+  let sum = 0;
+  let lengthOfA = +parseInt(prompt("Nhập độ dài của mảng a"));
+  while (lengthOfA < 1 || isNaN(parseInt(lengthOfA))) {
+    alert("Nhập độ dài là số nguyên dương");
+    lengthOfA = +parseInt(prompt("Nhập độ dài của mảng a"));
+  }
+  for (let i = 0; i < lengthOfA; i++) {
+    a[i] = +prompt("Nhập phần tử thứ " + i);
+  }
+  for (let i = 0; i < lengthOfA; i++) {
+    sum += a[i];
+    b[i] = sum;
+  }
+  document.write(b.join(','));
+</script>
+</body>
+</html>
