@@ -7,7 +7,8 @@
 <body>
 <script>
   let a = [7, 2, 5, 3, 5, 3];
-  let b = [7, 2, 5, 4, 6, 3, 5, 3];
+  let b = [7, 2, 5, 4, 6, 3, 5, 3, 4, 4, 99];
+  let d = [];
   let c = [];
   let count;
   for (let i = 1; i <= b.length; i++) {
@@ -18,9 +19,15 @@
       }
     }
     if (count === 0) {
-      c.push(b[i]);
+      d.push(b[i]);
     }
   }
+  for (let i = 0; i < d.length; i++) {
+    if (!c.includes(d[i])) {
+      c.push(d[i]);
+    }
+  }
+  c.sort((a, b) => a - b);
   console.log(c);
 </script>
 </body>

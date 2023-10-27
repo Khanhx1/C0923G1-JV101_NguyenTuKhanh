@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let arrayA = [];
+  let numerators = [5, 2, 5];
+  let denominators = [6, 3, 4];
+  let fraction = [];
+  for (let i = 0; i < numerators.length; i++) {
+    fraction[i] = (numerators[i] / denominators[i]);
+  }
+  console.log(fraction);
+  for (let i = 0; i < fraction.length; i++) {
+    arrayA[i] = fraction[i];
+  }
+  arrayA.sort((a, b) => b - a);
+  console.log(arrayA);
+  let result = fraction.indexOf(arrayA[0]);
+  console.log(result);
+</script>
+</body>
+</html>
