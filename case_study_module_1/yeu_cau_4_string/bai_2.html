@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = prompt("nhập chuỗi ký tự");
+    let array = [];
+    for (let i = 0; i < string.length; i++) {
+        if (!array.includes(string[i])) {
+            array.push(string[i]);
+        }
+    }
+    document.write(`Số ký tự khác nhau là ${array.length}`);
+</script>
+</body>
+</html>

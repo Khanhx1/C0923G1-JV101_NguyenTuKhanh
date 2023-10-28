@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập một chuỗi ký tự");
+    let newString = [];
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] !== " " && string[i + 1] !== " " || string[i] !== " " && string[i + 1] === " " || string[i] === " " && string[i + 1] !== " ") {
+            if (i === 0 && string[0] !== " ") {
+                newString.push(string[i].toUpperCase());
+            } else {
+                newString.push(string[i]);
+            }
+        }
+    }
+    for (let i = 1; i < newString.length; i++) {
+        if (newString[i - 1] === " " && newString[i] !== " ") {
+            newString[i] = newString[i].toUpperCase();
+        }
+        if (newString[i - 1] !== " " && newString[i] !== " ") {
+            newString[i] = newString[i].toLowerCase();
+        }
+    }
+    if (newString[0] === " ") {
+        newString.shift();
+    }
+    document.write(newString.join(``));
+</script>
+</body>
+</html>

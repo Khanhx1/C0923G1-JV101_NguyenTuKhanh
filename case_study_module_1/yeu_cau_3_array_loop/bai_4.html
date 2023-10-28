@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="menu"></p>
+<button onclick="orderDrink()">Gọi món</button>
+<hr>
+<p id="totalAmount"></p>
+<script>
+    let drink = ["Coffee", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa", "Thoát gọi món"];
+    let ordinalNumber = [1, 2, 3, 4, 5, 6, 7];
+    let unitPrice = [100, 200, 300, 400, 500, 600];
+    let menu = "";
+    for (let i = 0; i < drink.length; i++) {
+        menu += ordinalNumber[i] + "&nbsp&nbsp" + drink[i] + "<br>";
+    }
+    document.getElementById("menu").innerHTML = menu;
+
+    function orderDrink() {
+        let inputDrink;
+        let quanity;
+        let totalAmount = 0;
+        do {
+            inputDrink = +prompt("Vui lòng nhập số thứ tự của thức uống cần đặt (nhấn số 7 để thoát gọi món)");
+            if (inputDrink === 7) {
+                continue;
+            }
+            if (ordinalNumber.includes(inputDrink)) {
+                alert("Đơn giá của thức uống " + drink[inputDrink - 1] + " là: " + unitPrice[inputDrink - 1]);
+                quanity = +parseInt(prompt("Nhập số lượng"));
+                while (quanity < 1 || parseInt(quanity) !== quanity) {
+                    alert("Số lượng nhập vào không hợp lệ, vui lòng nhập lại");
+                    quanity = +parseInt(prompt("Nhập số lượng"));
+                }
+                totalAmount += (unitPrice[inputDrink - 1] * quanity);
+            } else {
+                alert("số thứ tự món không có trong menu, vui lòng nhập lại!");
+            }
+        } while (inputDrink !== 7)
+        console.log(totalAmount);
+        document.getElementById("totalAmount").innerHTML = "Tổng số tiền cần thanh toán là: " + totalAmount;
+    }
+</script>
+</body>
+</html>
