@@ -6,32 +6,56 @@
 </head>
 <body>
 <script>
-  let string = prompt("Nhập một chuỗi ký tự");
-  let newString = [];
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] !== " " && string[i + 1] !== " " || string[i] !== " " && string[i + 1] === " " || string[i] === " " && string[i + 1] !== " ") {
-      if (i === 0 && string[0] !== " ") {
-        newString.push(string[i].toUpperCase());
-      } else {
-        newString.push(string[i]);
+  function normalizeCharacterStrings(string) {
+    let newString = [];
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] !== " " && string[i + 1] !== " " || string[i] !== " " && string[i + 1] === " " || string[i] === " " && string[i + 1] !== " ") {
+        if (i === 0 && string[0] !== " ") {
+          newString.push(string[i].toUpperCase());
+        } else {
+          newString.push(string[i]);
+        }
       }
     }
-  }
-  for (let i = 1; i < newString.length; i++) {
-    if (newString[i - 1] === " " && newString[i] !== " ") {
-      newString[i] = newString[i].toUpperCase();
+    for (let i = 1; i < newString.length; i++) {
+      if (newString[i - 1] === " " && newString[i] !== " ") {
+        newString[i] = newString[i].toUpperCase();
+      }
+      if (newString[i - 1] !== " " && newString[i] !== " ") {
+        newString[i] = newString[i].toLowerCase();
+      }
     }
-    if (newString[i - 1] !== " " && newString[i] !== " ") {
-      newString[i] = newString[i].toLowerCase();
+    if (newString[0] === " ") {
+      newString.shift();
     }
+    if (newString[newString.length - 1] === " ") {
+      newString.pop();
+    }
+    return newString.join(``);
   }
-  if (newString[0] === " ") {
-    newString.shift();
+
+  function findMaxWord(string) {
+    let array = string.split(" ");
+    let lengthOfWord = [];
+    for (let i = 0; i < array.length; i++) {
+      lengthOfWord[i] = array[i].length;
+    }
+    let maxLengthOfWord = lengthOfWord[0];
+    for (let i = 1; i < lengthOfWord.length; i++) {
+      if (maxLengthOfWord < lengthOfWord[i]) {
+        maxLengthOfWord = lengthOfWord[i];
+      }
+    }
+    let longestWord = array[lengthOfWord.indexOf(maxLengthOfWord)];
+    return normalizeCharacterStrings(longestWord);
   }
-  if (newString[newString.length - 1] === " ") {
-    newString.pop();
-  }
-  document.write(newString.join(``));
+
+  let string = prompt("Nhập một chuỗi ký tự");
+  document.write("Xâu ký tự trước khi chuẩn hóa là: " + string + "<br>");
+  document.write("Xâu ký tự sau chuẩn hóa là: " + normalizeCharacterStrings(string) + "<br>");
+  document.write("Từ dài nhất trong xâu ký tự là: " + findMaxWord(string));
+
+
 </script>
 </body>
 </html>
