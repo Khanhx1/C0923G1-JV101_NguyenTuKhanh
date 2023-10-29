@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let string1 = prompt("nhập xâu ký tự thứ nhất");
+  let string2 = prompt("Nhập xâu ký tự thứ hai");
+  let arrOfString1 = string1.split("");
+  let arrOfString2 = string2.split("");
+  let count = 0;
+  for (let i = 0; i < arrOfString2.length; i++) {
+    if (arrOfString1.includes(arrOfString2[i])) {
+      count++;
+      arrOfString1.splice(arrOfString1.indexOf(arrOfString2[i]), 1);
+    }
+  }
+  document.write(`Số lượng ký tự chung của hai xâu ký tự là: ${count}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let row = +parseInt(prompt("Nhập số hàng m của matrix"));
+  while (row < 1 || isNaN(parseInt(row))) {
+    alert("Số hàng nhập vào không hợp lệ");
+    row = +parseInt(prompt("Nhập số hàng của matrix"));
+  }
+  let colum = +parseInt(prompt("Nhập số cột n của matrix"));
+  while (colum < 1 || isNaN(parseInt(colum))) {
+    alert("Số hàng nhập vào không hợp lệ");
+    colum = +parseInt(prompt("Nhập số cột của matrix"));
+  }
+  let matrix = [];
+  for (let i = 0; i < row; i++) {
+    matrix[i] = [];
+  }
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < colum; j++) {
+      matrix[i][j] = +prompt("Nhập giá trị phần tử hàng " + i + " cột " + j);
+    }
+  }
+
+  function getSum(matrix) {
+    let sumOfEven = 0;
+    for (let i = 0; i < row; i++) {
+      for (let j = 0; j < colum; j++) {
+        if (matrix[i][j] % 2 === 0) {
+          sumOfEven += matrix[i][j];
+        }
+      }
+    }
+    return sumOfEven;
+  }
+
+  document.write(`Tổng của các số chẵn trong matrix là ${getSum(matrix)}`);
+</script>
+</body>
+</html>

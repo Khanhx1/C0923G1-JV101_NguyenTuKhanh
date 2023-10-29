@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let row = +parseInt(prompt("Nhập số hàng của mảng hai chiều"));
+  while (row < 1 || isNaN(parseInt(row))) {
+    alert("Số hàng nhập vào không hợp lệ");
+    row = +parseInt(prompt("Nhập số hàng của mảng hai chiều"));
+  }
+  let colum = +parseInt(prompt("Nhập số cột của mảng hai chiều"));
+  while (colum < 1 || isNaN(parseInt(colum))) {
+    alert("Số hàng nhập vào không hợp lệ");
+    colum = +parseInt(prompt("Nhập số cột của mảng hai chiều"));
+  }
+  let array2d = [];
+  for (let i = 0; i < row; i++) {
+    array2d[i] = [];
+  }
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < colum; j++) {
+      array2d[i][j] = +prompt("Nhập giá trị phần tử hàng " + i + " cột " + j);
+    }
+  }
+
+  function displayAndCountPrime(array2d, row, colum) {
+    let count = 0;
+    let countPrime = 0;
+    let displayPrimes = "";
+    for (let i = 0; i < row; i++) {
+      for (let j = 0; j < colum; j++) {
+        for (let x = 0; x < math.sqrt(array2d[i][j]); x++) {
+          if (array2d[i][j] % x === 0) {
+            count++;
+            break;
+          }
+          if (count === 0) {
+            displayPrimes += array2d[i][j] + ", ";
+            countPrime++
+          }
+        }
+      }
+    }
+    return `Có ${countPrime} số nguyên tố là: ${displayPrimes}`;
+  }
+
+  document.write(displayAndCountPrime(array2d, row, colum));
+
+</script>
+</body>
+</html>
