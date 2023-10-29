@@ -25,22 +25,29 @@
       array2d[i][j] = +prompt("Nhập giá trị phần tử hàng " + i + " cột " + j);
     }
   }
+  console.log(array2d);
 
   function displayAndCountPrime(array2d, row, colum) {
-    let count = 0;
+    debugger;
+    let count;
     let countPrime = 0;
     let displayPrimes = "";
     for (let i = 0; i < row; i++) {
       for (let j = 0; j < colum; j++) {
-        for (let x = 0; x < math.sqrt(array2d[i][j]); x++) {
+        count = 0;
+        for (let x = 2; x <= Math.sqrt(array2d[i][j]); x++) {
+
           if (array2d[i][j] % x === 0) {
             count++;
             break;
           }
-          if (count === 0) {
-            displayPrimes += array2d[i][j] + ", ";
-            countPrime++
-          }
+        }
+        if (array2d[i][j] < 2) {
+          continue;
+        }
+        if (count === 0) {
+          displayPrimes += array2d[i][j] + ", ";
+          countPrime++
         }
       }
     }

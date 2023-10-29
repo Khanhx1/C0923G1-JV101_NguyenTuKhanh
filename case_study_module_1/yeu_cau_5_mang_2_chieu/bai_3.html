@@ -25,15 +25,24 @@
       array2d[i][j] = +prompt("Nhập giá trị phần tử hàng " + i + " cột " + j);
     }
   }
+
   function findMinMax(array2d) {
     let max = array2d[0][0];
     let min = array2d[0][0];
-  }
     for (let i = 0; i < row; i++) {
       for (let j = 0; j < colum; j++) {
-        if(max < )
+        if (max < array2d[i][j]) {
+          max = array2d[i][j];
+        }
+        if (min > array2d[i][j]) {
+          min = array2d[i][j];
+        }
       }
     }
+    return `Giá trị lớn nhất của mảng là: ${max}, giá trị nhỏ nhất của mảng là: ${min} `;
+  }
+
+  document.write(findMinMax(array2d));
 </script>
 </body>
 </html>
