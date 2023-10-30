@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+
+    th {
+      width: 100px;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    table, th, td {
+      border-collapse: collapse;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<button onclick="addStudent()">thêm học viên</button>
+<button onclick="removeStudent()">Xóa học viên</button>
+<button onclick="editInfomation()">Chỉnh sửa thông tin học viên</button>
+<br>
+<br>
+<table id="table">
+  <thead>
+  <tr>
+    <th>Mã học viên</th>
+    <th>Tên</th>
+    <th>Lớp</th>
+    <th>Email</th>
+    <th>Ngày sinh</th>
+    <th>Module</th>
+  </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<script>
+  let arrayOfStudent = [];
+
+  class Student {
+    constructor(id, name, classCode, email, dateOfBirth, module) {
+      this.id = id;
+      this.name = name;
+      this.classCode = classCode;
+      this.email = email;
+      this.dateOfBirth = dateOfBirth;
+      this.module = module;
+    }
+  }
+
+  function addStudent() {
+    // debugger;
+    let idOfStudent = prompt("Nhập id học sinh");
+    let name = prompt("Nhập tên học sinh");
+    let classCode = prompt("Nhập lớp của học sinh");
+    let email = prompt("Nhập email");
+    let dateOfBirth = prompt("Nhập ngày sinh");
+    let module = prompt("Nhập module đang học");
+    if (idOfStudent !== null && idOfStudent !== "") {
+      let student = new Student(idOfStudent, name, classCode, email, dateOfBirth, module);
+      arrayOfStudent.push(student);
+      let table = document.getElementById("table");
+      let row = table.insertRow(-1);
+      let cell1 = row.insertCell(0);
+      let cell2 = row.insertCell(1);
+      let cell3 = row.insertCell(2);
+      let cell4 = row.insertCell(3);
+      let cell5 = row.insertCell(4);
+      let cell6 = row.insertCell(5);
+      cell1.innerHTML = student.id;
+      cell2.innerHTML = student.name;
+      cell3.innerHTML = student.classCode;
+      cell4.innerHTML = student.email;
+      cell5.innerHTML = student.dateOfBirth;
+      cell6.innerHTML = student.module;
+    }
+  }
+
+  function removeStudent() {
+    let idOfStudent = prompt("Nhập id của học sinh cần xóa:");
+    if (idOfStudent != null && idOfStudent !== "") {
+      for (let i = 0; i < arrayOfStudent.length; i++) {
+        if (arrayOfStudent[i].id === idOfStudent) {
+          arrayOfStudent.splice(i, 1);
+          let table = document.getElementById("table");
+          table.deleteRow(i + 1);
+          break;
+        }
+      }
+    }
+  }
+
+  function editInfomation() {
+    let newName;
+    let newClassCode;
+    let newEmail;
+    let newdateOfBirth;
+    let newModule;
+    let idOfStudent = prompt("Nhập id của học viên cần sửa");
+    if (idOfStudent != null && idOfStudent !== "") {
+      for (let i = 0; i < arrayOfStudent.length; i++) {
+        if (arrayOfStudent[i].id === idOfStudent) {
+          newName = prompt("Nhập tên mới");
+          newClassCode = prompt("Nhập lớp mới");
+          newEmail = prompt("Nhập email mới");
+          newdateOfBirth = prompt("Nhập ngày sinh mới");
+          newModule = prompt("Nhập module mới");
+          arrayOfStudent[i].name = newName;
+          arrayOfStudent[i].classCode = newClassCode;
+          arrayOfStudent[i].email = newEmail;
+          arrayOfStudent[i].dateOfBirth = newdateOfBirth;
+          arrayOfStudent[i].module = newModule;
+          let table = document.getElementById("table");
+          let row = table.rows[i + 1];
+          let cell2 = row.cells[1];
+          let cell3 = row.cells[2];
+          let cell4 = row.cells[3];
+          let cell5 = row.cells[4];
+          let cell6 = row.cells[5];
+          cell2.innerHTML = newName;
+          cell3.innerHTML = newClassCode;
+          cell4.innerHTML = newEmail;
+          cell5.innerHTML = newdateOfBirth;
+          cell6.innerHTML = newModule;
+        }
+      }
+    }
+  }
+
+</script>
+</body>
+</html>
