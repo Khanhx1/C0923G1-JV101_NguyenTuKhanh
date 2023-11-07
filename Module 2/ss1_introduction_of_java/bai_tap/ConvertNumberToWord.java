@@ -2,7 +2,7 @@ package introduction_of_java.bai_tap;
 
 import java.util.Scanner;
 
-public class ChuyenSoThanhChu {
+public class ConvertNumberToWord {
     public static void main(String[] args) {
         System.out.println("Nhập số cần đọc: ");
         Scanner inputNumber = new Scanner(System.in);

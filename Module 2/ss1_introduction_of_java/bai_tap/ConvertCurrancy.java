@@ -2,7 +2,7 @@ package introduction_of_java.bai_tap;
 
 import java.util.Scanner;
 
-public class ChuyenDoiTienTe {
+public class ConvertCurrancy {
     public static void main(String[] args) {
         int rate = 23000;
         Scanner inputMoney = new Scanner(System.in);
