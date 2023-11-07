@@ -19,13 +19,10 @@ public class RemovedElementFromArray {
         }
         System.out.println("Result: ");
         if (count != 0) {
-            for (int i = index; i < array.length; i++) {
-                if (array[i] == array[array.length - 1]) {
-                    array[i] = 0;
-                    break;
-                }
+            for (int i = index; i < array.length - 1; i++) {
                 array[i] = array[i + 1];
             }
+            array[array.length - 1] = 0;
             for (int i : array) {
                 System.out.print(i + ", ");
             }
