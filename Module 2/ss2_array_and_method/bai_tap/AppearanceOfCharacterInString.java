@@ -3,8 +3,9 @@ import java.util.Scanner;
 public class AppearanceOfCharacterInString {
     public static int countChar (String string, String character) {
         int count = 0;
+        char temp = character.charAt(0);
         for (int i = 0; i < string.length(); i++) {
-            if(character.charAt(0) == string.charAt(i)) {
+            if(temp == string.charAt(i)) {
                 count++;
             }
         }
