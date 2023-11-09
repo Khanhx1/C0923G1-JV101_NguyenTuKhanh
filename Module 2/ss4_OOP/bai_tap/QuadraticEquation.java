@@ -31,11 +31,11 @@ public class QuadraticEquation {
     }
 
     public double getRoot1() {
-        return (-1 * b + Math.pow((b * b - 4 * a * c), 0.5)) / 2 * a;
+        return (-1 * b + Math.pow(this.getDiscriminant(), 0.5)) / 2 * a;
     }
 
     public double getRoot2() {
-        return (-1 * b - Math.pow((b * b - 4 * a * c), 0.5)) / 2 * a;
+        return (-1 * b - Math.pow(this.getDiscriminant(), 0.5)) / 2 * a;
     }
 
     public static void main(String[] args) {
