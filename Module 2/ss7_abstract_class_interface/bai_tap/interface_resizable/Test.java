@@ -19,17 +19,19 @@ public class Test {
                 Circle circle = (Circle) arr[i];
                 circle.resize(randomNumber);
             }
-            if (arr[i] instanceof Rectangle) {
+            if (arr[i].getClass() == Rectangle.class) {
                 Rectangle rectangle = (Rectangle) arr[i];
                 rectangle.resize(randomNumber);
             }
-            if (arr[i] instanceof Square) {
+            if (arr[i].getClass() == Square.class) {
                 Square square = (Square) arr[i];
-                square.setSide(square.getSide() * (1 + ((double) randomNumber / 100)));
+                square.resize(randomNumber);
             }
         }
         System.out.println(arr[0]);
         System.out.println(arr[1]);
         System.out.println(arr[2]);
+
+
     }
 }

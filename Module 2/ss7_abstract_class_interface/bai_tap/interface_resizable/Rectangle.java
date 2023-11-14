@@ -1,8 +1,8 @@
 package ss7_abstract_class_interface.bai_tap.interface_resizable;
 
 public class Rectangle extends Shape implements Resizable{
-    private double width;
-    private double length;
+    private double width = 1.0;
+    private double length = 1.0;
 
     public Rectangle() {
     }
@@ -18,8 +18,8 @@ public class Rectangle extends Shape implements Resizable{
         this.length = length;
     }
     public void resize(double percent) {
-        this.width = this.width * (1 + (percent / 100));
-        this.length = this.length * (1 + (percent / 100));
+        this.width = width * (1 + (percent / 100));
+        this.length = length * (1 + (percent / 100));
     }
 
     public double getWidth() {

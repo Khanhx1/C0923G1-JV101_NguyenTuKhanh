@@ -1,26 +1,22 @@
 package ss7_abstract_class_interface.bai_tap.interface_resizable;
 
-public class Square extends Rectangle {
-    private double side;
+public class Square extends Rectangle implements Resizable {
 
     public Square(double side) {
         super(side, side);
-        this.side = side;
     }
 
     public Square(double side, String color, boolean filled) {
         super(side, side, color, filled);
-        this.side = side;
     }
 
     public double getSide() {
-        return this.side;
+        return super.getLength();
     }
 
     public void setSide(double side) {
         super.setLength(side);
         super.setWidth(side);
-        this.side = side;
     }
 
     public double getArea() {
@@ -34,7 +30,7 @@ public class Square extends Rectangle {
     @Override
     public String toString() {
         return "A square with " +
-                "side= " + this.side +
+                "side= " + this.getSide() +
                 ", which is a subclass of " +
                 super.toString();
     }
@@ -46,4 +42,5 @@ public class Square extends Rectangle {
         System.out.println(square.getArea());
         System.out.println(square.getPerimeter());
     }
+
 }
