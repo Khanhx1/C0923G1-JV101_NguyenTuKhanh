@@ -53,7 +53,7 @@ public class MyLinkedList<E> {
         return numNodes;
     }
     public E remove(int index) {
-        if(index < 0 || index > numNodes) {
+        if(index < 0 || index > size()) {
             throw new IllegalArgumentException("error index: " + index);
         }
         Node temp = head;

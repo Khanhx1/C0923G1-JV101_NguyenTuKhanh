@@ -48,7 +48,7 @@ public class TestMyList {
 
 
         for (int i = 0; i < listOfStudent.getSize(); i++) {
-            Student student = (Student) listOfStudent.elements[i];
+            Student student = (Student) listOfStudent.get(i);
             System.out.println(student.getId());
             System.out.println(student.getName());
         }
