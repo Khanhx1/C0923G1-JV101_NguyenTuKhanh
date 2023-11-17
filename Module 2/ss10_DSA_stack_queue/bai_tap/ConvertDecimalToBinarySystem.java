@@ -13,6 +13,9 @@ public class ConvertDecimalToBinarySystem {
         int remainder;
         final int DIVISOR = 2;
         Stack<Integer> stack = new Stack<>();
+        if (divident == 0) {
+            binary = "0";
+        }
         while (divident != 0) {
             quotient = divident / DIVISOR;
             remainder = divident % DIVISOR;
