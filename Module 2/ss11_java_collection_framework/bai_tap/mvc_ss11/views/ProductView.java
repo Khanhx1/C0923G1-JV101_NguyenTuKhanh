@@ -14,7 +14,7 @@ public class ProductView {
         int choice;
        do{
            System.out.println("-----");
-           System.out.println("Edit product: ");
+           System.out.println("Management functions: ");
            System.out.println("1. Add product");
            System.out.println("2. Remove product");
            System.out.println("3. Edit product");
@@ -42,7 +42,7 @@ public class ProductView {
                   String inputId = scanner.nextLine();
                   Product removeProduct = productController.findById(inputId);
                   if (removeProduct != null) {
-                      System.out.println("Infomation of removed product: " + removeProduct);
+                      System.out.println("Information of removed product: " + removeProduct);
                       System.out.println("Do you want to remove it? y for confirm: ");
                       String confirm = scanner.nextLine();
                       if (confirm.equals("y")) {
@@ -52,6 +52,26 @@ public class ProductView {
                       }
                   }else {
                       System.out.println("Product is not found");
+                  }
+                  break;
+              case 3:
+                  System.out.println("Enter id product you want to edit: ");
+                  String idProductEdit = scanner.nextLine();
+                  Product editProduct = productController.findById(idProductEdit);
+                  if(editProduct != null) {
+                      System.out.println("Information of edited product: " + editProduct);
+                      System.out.println("Enter new value for product: ");
+                      Product newEditedProduct = inputProduct();
+                      System.out.println("Save changes? (y for yes)");
+                      String confirm = scanner.nextLine();
+                      if(confirm.equals("y")){
+                          productController.removeProduct(idProductEdit);
+                          productController.addProduct(newEditedProduct);
+                      } else {
+                          System.out.println("Your changes is not saved");
+                      }
+                  } else {
+                      System.out.println("Id is not found!");
                   }
                   break;
           }
